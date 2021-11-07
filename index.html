@@ -10,7 +10,6 @@
     />
     <link rel="stylesheet" href="./index.scss" />
   </head>
-
   <body>
     <header>
       <section id="header-1">
@@ -27,30 +26,51 @@
       <section id="filter-container">
         <div>
           <img src="images/illustrations/sun.png" alt="sun" />
-          <p>1. Set the amount of <bold>sunlight</bold> your plant will get.</p>
-          <select name="" id=""></select>
+          <p>1. Set the amount of <strong>sunlight</strong> your plant will get.</p>
+          <select name="sunlight" id="sunlight">
+            <option value="" disabled selected hidden>Select...</option>
+            <option value="no">No</option>
+            <option value="low">Low</option>
+            <option value="high">High</option>
+          </select>
         </div>
         <div>
           <img src="images/illustrations/wateringcan.png" alt="wateringcan" />
-          <p>2. How ofter do you wanto to <bold>water</bold> your plant?</p>
-          <select name="" id=""></select>
+          <p>2. How ofter do you wanto to <strong>water</strong> your plant?</p>
+          <select name="watering" id="watering">
+            <option value="" disabled selected hidden>Select...</option>
+            <option value="regularly">Regularly</option>
+            <option value="daily">Daily</option>
+            <option value="rarely">Rarely</option>
+          </select>
         </div>
         <div>
           <img src="images/illustrations/dog.png" alt="dog" />
-          <p>3. Do you have pets? Do they <bold>chew</bold> plants?</p>
-          <select name="" id=""></select>
+          <p>3. Do you have pets? Do they <strong>chew</strong> plants?</p>
+          <select name="pets" id="pets">
+            <option value="" disabled selected hidden>Select...</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
+          </select>
         </div>
       </section>
-      <section id="result-section">
+      <section id="result-section-1">
         <div>
           <h2>No results yet...</h2>
           <p>
-            Use the filters above to find the h2lant that best fits your environment :)
+            Use the filters above to find the plant that best fits your environment :)
           </p>
           <img src="images/illustrations/no-results.png" alt="no-results" />
         </div>
       </section>
+      <section id="result-section-2">
+        <div>
+          <img src="images/illustrations/pick.png" alt="pick" />
+          <h2>Our picks for you</h2>
+          <div id="plants-results"></div>
+        </div>
+      </section>
     </main>
+    <script src="./index.js"></script>
   </body>
-  <script src="./index.js"></script>
 </html>
