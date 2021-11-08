@@ -25,13 +25,13 @@ function generateWaterIcon(waterStatus) {
 }
 
 function createPlants (array) {
-  return  `<div class="plants cards">
+  return  `<div class="plants">
   ${array.map((plant) => {
     return `
-    <div class="plant card">
+    <div class="plant">
       ${plant.staff_favorite ? `<div class="staff"> Staff favorite </div>` : ``}
       <div>
-        <img src="${plant.url}" alt="${plant.name}">
+        <img id="plant-img" src="${plant.url}" alt="${plant.name}">
         <h3>${plant.name}</h3>
         <div>
           <p>$${plant.price}</p>
