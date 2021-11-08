@@ -16,7 +16,6 @@ header {
   background-size:cover;
   display:flex;
   justify-content: space-evenly;
-  min-width: 100vh;
 }
 
  #header-2 {
@@ -165,16 +164,10 @@ header {
   align-items: center
 }
 
-
 #plant-img {
   object-fit: cover;
   width: 250px
 }
-
-// .plant img {
-//   object-fit: cover;
-//   max-width: 10vw;
-// }
   
 #button-up {
   display: flex;
@@ -228,8 +221,8 @@ header {
     display: flex;
     position: relative;
     justify-content: flex-start;
-    min-height: 100vh;
-    margin-bottom: -100px;
+    min-height: 85vh;
+    margin-bottom: -150px;
     margin-top: -250px;
   }
   
@@ -346,6 +339,6 @@ header {
   }
 
   #plant-img {
-    max-height: 350px
+    width: 300px
   }
 }
