@@ -1,16 +1,17 @@
-# basic-test-boilerplate
-Aqui você encontrará um boilerplate simples, que será disponibilizado para os candidatos do processo de front da Redventures Brasil.
----
+# Repositório do teste prático Front-end Red Ventures
 
-## Como rodar localmente
+## Aqui está o projeto da página criada em HTML, CSS e Javascript
 
-Antes de tudo, você precisa precisará ter o nodejs instalado em sua máquina, após isso basta rodar: 
+### Versão desktop
+![screencapture-localhost-1234-2021-11-08-04_44_56](https://user-images.githubusercontent.com/13544641/140705134-0cd1b3b7-3ac8-4500-8256-10922664a9a2.png)
+![screencapture-localhost-1234-2021-11-08-04_44_41](https://user-images.githubusercontent.com/13544641/140705146-001c8402-1485-4b1a-9706-6a39b185850f.png)
 
-`yarn && yarn start` ou `npm install && npm start`
+### Versão mobile
+![screencapture-angelobittencourt-teste-rv-surge-sh-2021-11-08-05_11_41](https://user-images.githubusercontent.com/13544641/140706400-f6192c70-20ba-44bd-bffa-1a896807bb46.png)
+![screencapture-angelobittencourt-teste-rv-surge-sh-2021-11-08-05_12_08](https://user-images.githubusercontent.com/13544641/140706406-4ac110d4-d9a1-4491-ae19-b154bc549fc7.png)
 
-## Como gerar a URL de preview
 
-Para gerar a URL de preview ou "fazer o deploy", basta rodar o comando `yarn deploy` ou `npm deploy`. Esse script já ira automaticamente fazer o build e subir os arquivos estáticos para o Surge.sh, como nas imagens abaixo:
 
-![Screen Shot 2021-10-22 at 17 43 58](https://user-images.githubusercontent.com/92953864/138524410-480ed8d8-a567-4ba4-aa51-1b4337ce2ada.png)
-![Screen Shot 2021-10-22 at 17 45 44](https://user-images.githubusercontent.com/92953864/138524435-8724d434-1dac-4664-a5a1-9f7b32556f8c.png)
+## Link para acesso online do projeto
+
+https://angelobittencourt-teste-rv.surge.sh/
