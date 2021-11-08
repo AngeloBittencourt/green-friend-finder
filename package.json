@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Simple Parcel Sandbox",
   "main": "index.html",
+  "type": "module",
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
-    "deploy": "yarn build && surge"
+    "deploy": "npm run build && surge"
   },
   "dependencies": {
+    "node-fetch": "^3.0.0",
     "parcel": "1.12.4",
     "surge": "^0.23.0"
   },

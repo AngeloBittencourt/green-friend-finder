@@ -1,4 +1,351 @@
 body {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  box-sizing: border-box;
+  background-color: #75bc97;
+  color: white;
+  display:flex;
+  justify-content: space-between;
+}
+
+#header-1 {
+  background-image: url(./images/hero/desktop/left-leaves.png);
+  background-size:cover;
+  display:flex;
+  justify-content: space-evenly;
+  min-width: 100vh;
+}
+
+ #header-2 {
+  background-image: url(./images/hero/desktop/plantperson.png);
+  background-size:cover;
+  display:flex;
+  min-width: 40vh;
+}
+
+#header-3 {
+  background-image: url(./images/hero/desktop/right-leaves.png);
+  background-size:cover;
+  display:flex;
+  min-width: 40vh;
+}
+
+#text-div {
+  align-items: center;
+  max-width: 40%;
+
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#text-div h1 {
+  padding-top: 25px;
+  padding-bottom: 50px;
+  margin: 0;
+}
+
+#text-div img { 
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin: 0;
+}
+
+#filter-container {
+  align-items: flex-end;
+  display: flex;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
+#filter-container img {
+  width: 100px;
+}
+
+.filter-box {
+  max-width: 13%;
+}
+
+.filter-box select {
+  color: gray;
+  padding: 10px;
+  width: 200px;
+  height: 43px;
+  border-radius:36px;
+  display:inline-block;
+  overflow:hidden;
+  background:#ffffff;
+  border:1px solid gray;
+}
+
+.filter-box select:hover {
+  cursor: pointer;
+}
+
+#last-results {
+  background-color: #f6f6f6;
+  padding-bottom: 100px;
+}
+
+#result-section-1 {
+  padding-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100%;
+}
+
+#noresult-text p{
+  color: gray;
+  font-size: 18px;
+  max-width:33%;
+  padding-right: 150px;
+}
+
+#noresult-text  h2{
+  color: gray;
+  font-size: 48px;
+}
+
+#result-section-2{
+  display:none;
+}
+
+.picks {
+  display: flex;
+  margin: 5px 300px;
+  padding: 20px 5px
+}
+
+.picks h2 {
+  width: 100vw;
+}
+
+#pick-img{
+  width: 250px;
+}
+
+#result-section-2 div h2{
+  font-size: 40px;
+}
+
+.cards {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+  padding: 2px 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.plants {
+  max-width: 800px;
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-gap: 20px;
+  padding: 2px 16px;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.plant {
+  background-color: white;
+  color: #15573f;
+  font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  min-width: 250px;
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center
+}
+
+
+#plant-img {
+  object-fit: cover;
+  width: 250px
+}
+
+// .plant img {
+//   object-fit: cover;
+//   max-width: 10vw;
+// }
+  
+#button-up {
+  display: flex;
+  justify-content: center;
+}
+
+#button-up button {
+  justify-content: center;
+  align-items: center;
+  color: gray;
+  padding: 10px;
+  width: 50vw;
+  height: 55px;
+  border-radius:36px;
+  display: flex;
+  overflow:hidden;
+  background:#ffffff;
+  border:1px solid gray;
+}
+
+#button-up button:hover {
+  cursor: pointer;
+}
+
+.staff {
+  background-color: #75bc97;
+}
+
+@media screen and (max-width: 768px) {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body{
+    margin: 0;
     font-family: "Montserrat", sans-serif;
-    background-color: green;
+  }
+
+  header {
+    background-color: #75bc97;
+    color: white;
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  #header-1 {
+    background-image: url(./images/hero/mobile/mobile-leaves.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    position: relative;
+    justify-content: flex-start;
+    min-height: 100vh;
+    margin-bottom: -100px;
+    margin-top: -250px;
+  }
+  
+   #header-2 {
+    background-image: url(./images/hero/mobile/mobile-plantperson.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    display:flex;
+    min-height: 50vh;
+    
+  }
+  
+  #text-div {
+    margin-top: 250px;
+    margin-left: 35px;
+    align-items:baseline;
+    max-width: 70vw;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  #text-div h1 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+  }
+  
+  #text-div img { 
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin: 0;
+  }
+
+  #filter-container {
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px;
+  }
+
+  
+  #filter-container img {
+    width: 80px;
+  }
+
+  .filter-box {
+    max-width: 70%;
+  }
+
+  .filter-box select {
+
+    min-width: 60vw;
+    margin-bottom: 50px;
+  }
+
+  #result-section-1 {
+    text-align: center;
+    padding-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-direction: column;
+  }
+  #noresult-text {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+  }
+
+  #noresult-text h2{
+    font-size: 60px;
+  }
+
+  #noresult-text p{
+    min-width: 400px;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .picks {
+    display: flex;
+    margin: 5px 25px;
+    padding: 20px 5px;
+    flex-direction: column;
+  }
+
+  .picks h2 {
+    font-size: 40px;
+    width: 40vw;
+  }
+
+  #pick-img{
+    width: 250px;
+  }
+
+  #plants-results {
+    display:grid;
+  }
+  
+  .plants {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+    justify-content: flex-start
+  }
+
+  .plant {
+    flex: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  #plant-img {
+    max-height: 350px
+  }
 }
