@@ -6,83 +6,109 @@ const threeDropIcon = require('./images/icons/3-drops.svg');
 const petIcon = require('./images/icons/pet.svg');
 const toxicIcon = require('./images/icons/toxic.svg');
 
-let plantList = [];
+function generateSunsIcons(sunStatus) {
+  if (sunStatus === 'low'){
+    return lowSunIcon;
+  } if (sunStatus === 'no') {
+    return noSunIcon;
+  }
+}
 
-function fetchFromAPi(sun, water, havePet) {
-  fetch(`https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${sun}&water=${water}&pets=${havePet}`)
-  .then(request => request.json())
-  .then(response => plantList = response);
+function generateWaterIcon(waterStatus) {
+  if (waterStatus === 'rarely'){
+    return oneDropIcon;
+  } if (waterStatus === 'daily') {
+    return twoDropIcon;
+  } else {
+    return threeDropIcon;
+  }
+}
+
+function createPlants (array) {
+  return  `<div class="plants cards">
+  ${array.map((plant) => {
+    return `
+    <div class="plant card">
+      ${plant.staff_favorite ? `<div class="staff"> Staff favorite </div>` : ``}
+      <div>
+        <img src="${plant.url}" alt="${plant.name}">
+        <h3>${plant.name}</h3>
+        <div>
+          <p>$${plant.price}</p>
+          <img src="${plant.toxicity ? toxicIcon : petIcon  }" alt="${plant.toxicity ? "toxic": "not-toxic"}">
+          <img src="${generateSunsIcons(plant.sun)}" alt="${plant.sun}">
+          <img src="${generateWaterIcon(plant.water)}" alt="${plant.water}">
+        </div>
+      </div>
+    </div>`
+  }).join(' ')}
+  </div>`
+}
+
+function invertDisplay() {
+  const noresultPlants = document.getElementById('result-section-1');
+  const resultPlants = document.getElementById('result-section-2');
+
+  noresultPlants.style = 'display: none';
+  resultPlants.style = 'display: block';
+}
+
+function revertDisplay() {
+  const noresultPlants = document.getElementById('result-section-1');
+  const resultPlants = document.getElementById('result-section-2');
+
+  noresultPlants.style = 'display: flex';
+  resultPlants.style = 'display: none';
+}
+
+function createPlantsElement(plantsarray) {
+  const plants = document.getElementById('plants-results');
+
+  if(plantsarray.length > 0) {
+    plants.innerHTML = createPlants(plantsarray);
+  }
+  if(plantsarray.error) {
+    revertDisplay();
+  }
+}
+
+function fetchPlantsApi (sun, water, pet) {
+  if(sun !== '' && water !== '' && pet !== '') {
+    fetch(`https://front-br-challenges.web.app/api/v2/green-thumb/?sun=${sun}&water=${water}&pets=${pet}`)
+    .then(request => request.json())
+    .then(response => createPlantsElement(response));
+
+    window.scrollTo(0, document.body.scrollHeight);
+    invertDisplay();
+  }
 }
 
 window.onload = () => {
-  console.log(plantList)
+
   const sunSelect = document.getElementById('sunlight');
   const waterSelect = document.getElementById('watering');
   const petSelect = document.getElementById('pets');
   
-  function onSelect() {
-    const sunValue = sunSelect.value;
-    const waterValue = waterSelect.value;
-    const petValue = petSelect.value;
-    if(sunValue !== '' && waterValue !== '' && petValue !== '') {
-      fetchFromAPi(sunValue, waterValue, petValue);
-      plantList.join(' ')
-      createPlantsElement();
-    }
+  function onSelectValue() {
+    const sunValue =  sunSelect.value;
+    const waterValue =  waterSelect.value;
+    const petValue =  petSelect.value;
+
+    fetchPlantsApi(sunValue, waterValue, petValue);
   }
+
   
-  sunSelect.addEventListener('change', onSelect);
-  waterSelect.addEventListener('change',onSelect);
-  petSelect.addEventListener('change', onSelect);
+  sunSelect.addEventListener('change', onSelectValue);
+  waterSelect.addEventListener('change',onSelectValue);
+  petSelect.addEventListener('change', onSelectValue);
 
-  function sunsIcons(sunStatus) {
-    if(sunStatus === 'low'){
-      return lowSunIcon;
-    } if(sunStatus === 'no') {
-      return noSunIcon;
-    }
+  const pageUpButton = document.getElementById('page-up');
+
+  function pageUp () {
+    window.scrollTo(0, 0);
   }
 
-  function waterIcon(waterStatus) {
-    if(waterStatus === 'rarely'){
-      return oneDropIcon;
-    } if(waterStatus === 'daily') {
-      return twoDropIcon;
-    } else{
-      return threeDropIcon;
-    }
-  }
-
-  function createPlants () {
-
-    return  `<div class="plants">
-    ${plantList.map((plant) => {
-      return `
-      <div class="plant">
-        ${plant.staff_favorite ? `<div> Staff favorite </div>` : ``}
-        <div>
-          <img src="${plant.url}" alt="${plant.name}">
-          <h3>${plant.name}</h3>
-          <p>$${plant.price}</p>
-        </div>
-        <div>
-          <img src="${plant.toxicity ? petIcon : toxicIcon}" alt="${plant.toxicity}">
-          <img src="${sunsIcons(plant.sun)}" alt="${plant.sun}">
-          <img src="${waterIcon(plant.water)}" alt="${plant.water}">
-        </div>
-      </div>`
-    }).join(' ')}
-    </div>`
-  }
-
-
-  function createPlantsElement() {
-    const plants = document.getElementById('plants-results');
-
-    if(plantList.length > 0) {
-      plants.innerHTML = createPlants();
-    }
-  }
+  pageUpButton.addEventListener('click', pageUp)
 
 }
 

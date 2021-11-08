@@ -19,12 +19,15 @@
           <img src="images/icons/arrow-down.svg" alt="Arrow Down" />
         </div>
       </section>
+
       <section id="header-2"></section>
+
       <section id="header-3"></section>
     </header>
+
     <main>
       <section id="filter-container">
-        <div>
+        <div class="filter-box">
           <img src="images/illustrations/sun.png" alt="sun" />
           <p>1. Set the amount of <strong>sunlight</strong> your plant will get.</p>
           <select name="sunlight" id="sunlight">
@@ -34,7 +37,8 @@
             <option value="high">High</option>
           </select>
         </div>
-        <div>
+
+        <div class="filter-box">
           <img src="images/illustrations/wateringcan.png" alt="wateringcan" />
           <p>2. How ofter do you wanto to <strong>water</strong> your plant?</p>
           <select name="watering" id="watering">
@@ -44,7 +48,8 @@
             <option value="rarely">Rarely</option>
           </select>
         </div>
-        <div>
+
+        <div class="filter-box">
           <img src="images/illustrations/dog.png" alt="dog" />
           <p>3. Do you have pets? Do they <strong>chew</strong> plants?</p>
           <select name="pets" id="pets">
@@ -54,25 +59,38 @@
           </select>
         </div>
       </section>
+
       <section id="last-results">
         <section id="result-section-1">
-          <div>
+          <div id="noresult-text">
             <h2>No results yet...</h2>
             <p>
               Use the filters above to find the plant that best fits your environment :)
             </p>
+          </div>
+          <div id="noresult-img">
             <img src="images/illustrations/no-results.png" alt="no-results" />
           </div>
         </section>
+
         <section id="result-section-2">
-          <div>
-            <img src="images/illustrations/pick.png" alt="pick" />
+          <div class="picks">
+            <img id="pick-img" src="images/illustrations/pick.png" alt="pick" />
             <h2>Our picks for you</h2>
-            <div id="plants-results"></div>
+          </div>
+          <div class="cards" id="plants-container">
+            <div class="cards" id="plants-results"></div>
+          </div>
+          <div id="button-up">
+            <button id="page-up">
+              <img src="./images/icons/arrow-up.svg" alt="" /> <span></span>
+              Back to the top
+            </button>
           </div>
         </section>
       </section>
     </main>
+
     <script src="./index.js"></script>
   </body>
 </html>
