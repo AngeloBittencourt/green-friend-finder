@@ -218,16 +218,19 @@ header {
     color: white;
     display:flex;
     flex-direction: column;
+    min-height: 100vh;
   }
 
   #header-1 {
     background-image: url(./images/hero/mobile/mobile-leaves.png);
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
-    display:flex;
+    display: flex;
     position: relative;
     justify-content: flex-start;
     min-height: 100vh;
+    margin-bottom: -100px;
+    margin-top: -250px;
   }
   
    #header-2 {
@@ -235,22 +238,22 @@ header {
     background-size:contain;
     background-repeat: no-repeat;
     display:flex;
-    margin-top: 500px;
     min-height: 50vh;
     
   }
   
   #text-div {
+    margin-top: 250px;
     margin-left: 35px;
     align-items:baseline;
-    max-width: 100%;
-    font-size: 45px;
+    max-width: 70vw;
+    font-size: 40px;
     font-weight: bold;
   }
   
   #text-div h1 {
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     margin: 0;
   }
   
@@ -343,6 +346,6 @@ header {
   }
 
   #plant-img {
-    width: 300px
+    max-height: 350px
   }
 }
