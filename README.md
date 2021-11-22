@@ -1,6 +1,4 @@
-# Repositório do teste prático Front-end Red Ventures
-
-## Aqui está o projeto da página criada em HTML, CSS e Javascript
+## Projeto desenvolvido em HTML, CSS e Javascript
 
 ### Versão desktop
 ![screencapture-localhost-1234-2021-11-08-04_44_56](https://user-images.githubusercontent.com/13544641/140705134-0cd1b3b7-3ac8-4500-8256-10922664a9a2.png)
